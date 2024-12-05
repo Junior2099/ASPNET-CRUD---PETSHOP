@@ -1,0 +1,39 @@
+﻿@page
+@model caotinhofeliz.Pages_Catalogos.IndexModel
+
+@{
+    ViewData["Title"] = "Catálogo de Produtos";
+}
+
+<h1>Catálogo de Produtos Disponíveis</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Produto[0].Nome)</th>
+        <th>@Html.DisplayNameFor(model => model.Produto[0].Descricao)</th>
+        <th>@Html.DisplayNameFor(model => model.Produto[0].Preco)</th>
+        <th>Imagem</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Produto)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+            <td>@Html.DisplayFor(modelItem => item.Preco)</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.ImagemUrl))
+                {
+                    <img src="@Url.Content(item.ImagemUrl)" alt="@item.Nome" width="100" height="100" />
+                }
+                else
+                {
+                    <span>Sem imagem</span>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

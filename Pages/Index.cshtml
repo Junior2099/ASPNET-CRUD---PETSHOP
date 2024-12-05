@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron text-center bg-light">
+        <h1 class="display-4">Bem-vindo(a)</h1>
+        <p class="lead">Estamos felizes em tê-lo(a) conosco. Aqui você pode gerenciar os produtos, cadastrar clientes e muito mais.</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <h3>Links Rápidos</h3>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-3 mb-3">
+                <a class="btn btn-lg btn-outline-primary btn-block" href="@Url.Page("/Produtos/Index")">Gerenciar Produtos</a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a class="btn btn-lg btn-outline-primary btn-block" href="@Url.Page("/Clientes/Index")">Cadastrar Clientes</a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a class="btn btn-lg btn-outline-primary btn-block" href="@Url.Page("/Pets/Index")">Cadastrar Pets</a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a class="btn btn-lg btn-outline-primary btn-block" href="@Url.Page("/Catalogos/Index")">Ver Catálogo</a>
+            </div>
+            <div class="col-md-3 mb-3">
+                <a class="btn btn-lg btn-outline-secondary btn-block" href="@Url.Page("/Privacy")">Sobre</a>
+            </div>
+        </div>
+    </div>
+   
+    <img src="https://liquidhealthpets.com/cdn/shop/articles/dog-5883275_1920_1920x.jpg?v=1672138759" alt="logotipo" width="1260" height="900"/> 
+</div>

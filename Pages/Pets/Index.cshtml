@@ -1,0 +1,48 @@
+@page
+@model caotinhofeliz.Pages_Pets.IndexModel
+
+@{
+    ViewData["Title"] = "Cadastrar Pet";
+}
+
+<h1>Cadastrar pets</h1>
+
+<p>
+    <a asp-page="Create">Cadastar novo pet:</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet[0].Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet[0].Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Pet) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.CPF)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalhar</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
